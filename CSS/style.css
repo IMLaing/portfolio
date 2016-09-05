@@ -1,0 +1,185 @@
+/*
+----------------------------------------Colors
+#ffffff	(255,255,255)
+#999999	(153,153,153)
+#666666	(102,102,102)
+#333333	(51,51,51)
+#000000	(0,0,0)
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+	height:100%;
+}
+body {
+	margin: 0;
+  background-image: url('../IMG/banner.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 60px;
+}
+footer {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  background: rgba(0, 0, 0, .5);
+}
+/*---Nav--------------------------Nav---*/
+.header {
+	position: absolute;
+	right: 0;
+	margin-right: 5px;
+}
+.dropbtn {
+	width: 100%;
+    background: rgba(0, 0, 0, 0);
+    border: 2px white solid;
+    color: white;
+    padding: 16px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.dropdown {
+	width: 100%;
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+	width: 100%;
+    display: none;
+    position: absolute;
+    right: 0;
+    background: rgba(0, 0, 0, .8);
+    min-width: 160px;
+}
+.dropdown-content a {
+	text-align: center;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+	background: #333333;
+
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/*---Header Box--------------------------Header Box---*/
+section.header {
+	background: rgba(0, 0, 0, .5);
+}
+div.headerContainer {
+	color: #fff;
+	display: flex;
+	width: 100%;
+	margin: 25px auto;
+	justify-content: center;
+	align-items: center;
+}
+div.headerContainer h1{
+    font-size: 2em;
+}
+.headerContainer p {
+	border-left: 1px #fff solid;
+	text-align: right;
+	width: 250px;
+	margin: 5px;
+}
+.pageTitle {
+	text-align: center;
+	color: #fff;
+	font-size: 3em;
+	border-bottom: 3px #fff solid;
+}
+
+/*---Project Cards--------------------------Project Cards---*/
+.projectCard {
+	border-radius: 5px;
+	border: 1px #999999 solid;
+	box-shadow: 2px 2px 2px #000;
+	margin:1.375em auto;
+	padding: 15px;
+	max-width: 460px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.cardTitle, .cardThumbnail, .cardDescription{
+	flex-grow: 1;
+	flex-shrink: 0;
+}
+h1.cardTitle {
+	text-align: center;
+}
+img.cardThumbnail{
+	width: 100%;
+	max-width: 360px;
+	max-height: 220px;
+	box-shadow: 2px 2px 3px #333333;
+}
+
+.projectCard a {
+	text-decoration: none;
+	color: #333333;
+	font-size: 1.5em;
+}
+
+.uMKE {
+	background: rgba(242, 204, 255, .6);
+}
+.bBnk {
+	background: rgba(48, 72, 72, .6);
+}
+.gGH {
+	background: rgba(255, 204, 102, .6);
+}
+.pLS {
+	background: rgba(210, 210, 210, .6);
+}
+.tTT {
+	background: rgba(102, 0, 0, .6)
+}
+.sTMH {
+	background: rgba(153, 187, 255, .6);
+}
+
+/*---Social Footer--------------------------Social Footer---*/
+
+.footerContainer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+		color: #fff;
+}
+
+.footerContainer > .footerItem > a > i:hover {
+	cursor: pointer;
+}
+
+.footerContainer > .footerItem > a >  i {
+	color: #fff;
+	margin: 0 5px;
+	font-size:1.5em;
+
+}
+

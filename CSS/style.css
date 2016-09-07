@@ -26,7 +26,7 @@ body {
   background-size: cover;
   position: relative;
   min-height: 100%;
-  padding-bottom: 60px;
+  padding-bottom: 75px;
 }
 footer {
   width: 100%;
@@ -34,80 +34,89 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 60px;
+  height: 75px;
   background: rgba(0, 0, 0, .5);
 }
+.contentFull{
+	display: flex;
+	flex-direction: column;
+}
 /*---Nav--------------------------Nav---*/
-.header {
-	position: absolute;
-	right: 0;
-	margin-right: 5px;
-}
-.dropbtn {
-	width: 100%;
-    background: rgba(0, 0, 0, 0);
-    border: 2px white solid;
-    color: white;
-    padding: 16px;
-    font-size: 24px;
-    cursor: pointer;
-}
-.dropdown {
-	width: 100%;
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content {
-	width: 100%;
-    display: none;
-    position: absolute;
-    right: 0;
-    background: rgba(0, 0, 0, .8);
-    min-width: 160px;
-}
-.dropdown-content a {
+#navbar > ul > li {
 	text-align: center;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
 }
-.dropdown-content a:hover {
-	background: #333333;
-
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 
 /*---Header Box--------------------------Header Box---*/
-section.header {
-	background: rgba(0, 0, 0, .5);
-}
+
 div.headerContainer {
 	color: #fff;
-	display: flex;
-	width: 100%;
 	margin: 25px auto;
-	justify-content: center;
-	align-items: center;
 }
 div.headerContainer h1{
     font-size: 2em;
 }
 .headerContainer p {
 	border-left: 1px #fff solid;
+	border-top: 1px #fff solid;
 	text-align: right;
+	position: relative;
+	left: 24px;
 	width: 250px;
 	margin: 5px;
+	padding: 5px;
 }
-.pageTitle {
+/*---Index Cards--------------------------Index Cards---*/
+
+.megaIconContainer{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+.megaIconItem {
+	color: white;
 	text-align: center;
-	color: #fff;
-	font-size: 3em;
-	border-bottom: 3px #fff solid;
+	background: rgba(0,0,0, .5);
+	border-radius: 5px;
+	width: 250px;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	align-content: center;
+	transition: 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+    margin: 10px 0;
 }
+.megaIconFlip:hover .megaIconItem{
+	transform: rotateY(180deg);   
+}
+ .front, .back {
+        backface-visibility: hidden;
+        position: absolute;
+}
+  .front {
+        z-index: 1;
+        transform: rotateY(180deg);
+}
+ .back {
+        z-index: 2; /* back side, placed above front */
+        transform: rotateY(0deg);
+}
+.megaIconItem i {
+	font-size: 150px;
+	padding: 10px;
+}
+.megaIconItem p {
+	font-size: 1.2em;
+	font-weight: 900;
+	padding: 10px;
+} 
+
 
 /*---Project Cards--------------------------Project Cards---*/
 .projectCard {
@@ -128,18 +137,19 @@ div.headerContainer h1{
 }
 h1.cardTitle {
 	text-align: center;
+	padding: 10px;
 }
 img.cardThumbnail{
 	width: 100%;
 	max-width: 360px;
 	max-height: 220px;
-	box-shadow: 2px 2px 3px #333333;
+	box-shadow: 4px 4px 4px #333333;
 }
 
-.projectCard a {
-	text-decoration: none;
-	color: #333333;
-	font-size: 1.5em;
+.projectCard p {
+	padding: 10px;
+	color: black;
+	font-weight:bold;
 }
 
 .uMKE {
@@ -169,11 +179,13 @@ img.cardThumbnail{
 	flex-wrap: nowrap;
 	justify-content: space-around;
 	align-items: center;
-		color: #fff;
+	color: #fff;
 }
 
 .footerContainer > .footerItem > a > i:hover {
 	cursor: pointer;
+	transition: .2s ease;
+	color: #000;
 }
 
 .footerContainer > .footerItem > a >  i {
@@ -183,3 +195,7 @@ img.cardThumbnail{
 
 }
 
+.footerItem {
+	margin-top: 10px;
+	line-height: 10px;
+}

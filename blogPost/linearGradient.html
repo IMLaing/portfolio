@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>IMLaing Consulting - Linear Gradient</title>
+	<link rel="icon" type="image/png" href="">
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../JS/script.js"></script>
+	<link rel='stylesheet' type='text/css' href='../CSS/style.css'>
+	<link rel='stylesheet' type='text/css' href='linearGradient.css'>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html">IMLaing Consulting</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../learning.html">Learning with IML</a></li>
+					<li><a href="#">Exercises to keep busy</a></li>
+					<li><a href="../portfolio.html">Portfolio for IML</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>  
+<section class="contentFull">
+
+	<div class="headerContainer">
+		<h1>IMLaing Consulting</h1>
+		<p>Salesman gone web developer working to create a simple design that brings profitability and traffic to your website</p>
+	</div>
+	
+	<div class="blogPostContainer">
+	<!-- Drop Down List
+		just give me the code: 
+		*linear-gradient for elements
+		*linear-gradient for text
+		*linear-gradient for borders -->
+
+	<!--remove rabbit holes y/n-->
+
+	<div class="blogIntro">
+		<h1>Linear Gradient - The Answer To 'Can We Make It Pop?'</h1>
+		<p>Need something a touch smoother or extreme contrast? Linear Gradient adds a little pop right where the client really needs it.</p>
+		<h2>But What Is Linear Gradient?</h2>
+	</div>
+
+	<div class="blogContent">
+		<p>Linear gradients provide an element with multiple colors. This is accomplished by switching the angle along the 	gradient line. The gradient line is a bit much but just in case click on the ? below: 
+		</p> 
+		<div id="modPoper"></div>
+		
+		
+		<div class="modularPop">
+				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">MDN Linear-Gradient</a> 
+				<p>The gradient line goes through the center of a colored image at different angles. Changing the angle is what changes the color we see on the page. The lines starting point and ending point are symmetricly placed around the center of the colored image where it creates an angle with the closest corner. Adding stopping points will create more color transitions. Stopping points will be halfway between the nearest two points. However you could also define length and percentage in the CSS data type.</p>	
+		</div>
+
+
+		<p> By adding additional stopping points along the gradient line there will be more colors to the element. </p>
+<pre>
+element.class {
+
+	background: linear-gradient( direction, firstColor, secondColor );
+
+}
+</pre>
+		<p>Direction can be an angle or a direction for the colors to flow. If geometry isn't your thing go ahead and use `to top` or `to top left`. These two options will render the same result,</p>
+<pre>
+element.class {
+
+	background: linear-gradient( to top, firstColor, secondColor );
+		/*is the same result as
+	background: linear-gradient( 0deg, firstColor, secondColor );
+	
+
+}
+</pre>
+		<p>also remember that you can add more colors by adding more stops</p>
+<pre>
+element.class {
+
+	background: linear-gradient( to top, firstColor, secondColor, thirdColor, fourthColor, etc. );
+		
+}
+</pre>
+
+		<p>Notice how fancy the text was at the top and wondering why linear-gradient isn't working on text? Linear-gradient can only be applied to an element that can use an image. For example, an image can be used as the background of a div so linear-gradient can be applied. If you really need that early power-point style there is a workaround.  Make the background of the text element linear-gradient and turn the text transparent. </p>
+
+<pre>
+element {
+  background: linear-gradient(direction, firstColor, secondColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</pre>
+
+		<p>Now the text will be transparent and you will see the background as the linear-gradient.</p>
+
+			<div class="fancyBorder">
+<p>So what about those fancy borders on the sides, linear-gradient doesn't work on the border either? The border needs a little trickery to accept linear-gradient. </p>
+
+
+<pre>
+element {
+	border-image: [source] [slice] [width];
+}
+</pre>
+		<p><span class="codeText">border-image</span> can set the background image of a border. Now that you have access to the border as an image, linear-gradient away. [slice] is the slice where the image will be cut and can be a number or a percent. There is no need to cut the linear-gradient for the border so we use 1 for slice.</p>  
+
+<pre>
+element {
+	border-image: linear-gradient(direction, firstColor, secondColor) 1 100%;
+}
+</pre>
+			</div>
+
+		<p>While calling colors by name such as red, orange, yellow - there is a sharper change than using colors that are similar. Check out the <a href="http://www.w3schools.com/colors/colors_picker.asp">color wheel of development</a> for some hex codes and grab something closer together if you need a smooth finish. Greys work well for very sublte changes.</p>
+
+		<p>You want to loop the gradient colors? well then, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient">repeating-linear-gradient</a> here we come.</p>
+		<div class="resourceLinks">
+			<h2>Resource Links:</h2>
+			<ul>
+				<li>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradienthttps://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient</a>
+				</li>
+				<li>
+					<a href="http://www.w3schools.com/cssref/css3_pr_border-image.asp">http://www.w3schools.com/cssref/css3_pr_border-image.asp</a>
+				</li>
+				<li>
+					<a href="https://css-tricks.com/snippets/css/gradient-text/">https://css-tricks.com/snippets/css/gradient-text/</a>
+				</li>
+				<li>
+					<a href="http://www.w3schools.com/colors/colors_picker.asp">http://www.w3schools.com/colors/colors_picker.asp</a>
+				</li>
+			</ul>
+		</div>	
+
+		</div> <!-- blogContent -->
+	</div> <!-- blogPostContainer --> 
+	<footer>
+		<div class="footerContainer">
+			<div class="footerItem">
+				<p>&copy IMLaing Consulting 2016</p>
+				<p> Email: <a href="mailto:ianmlaing@gmail.com">ianmlaing@gmail.com</a></p>
+				<p>Phone: 978-500-2392</p>
+			</div>
+			<div class="footerItem">
+				<a href="https://www.linkedin.com/in/ian-laing-5055b347?trk=nav_responsive_tab_profile_pic"><i class="fa fa-linkedin"></i></a>
+				<a href="https://github.com/IMLaing?tab=repositories"><i class="fa fa-github"></i></a>
+				<a href="http://codepen.io/IML/"><i class="fa fa-codepen"></i></a>
+				<a href="https://twitter.com/IMLaing"><i class="fa fa-twitter"></i></a>
+			</div>
+		</div>
+	</footer>
+</section>
+
+</body>
+</html>
+
+
+
+
+

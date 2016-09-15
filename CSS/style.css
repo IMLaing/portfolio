@@ -172,7 +172,9 @@ img.cardThumbnail{
 }
 
 /*---Social Footer--------------------------Social Footer---*/
-
+.blogPostContainer > div {
+	flex: 1;
+}
 .footerContainer{
 	display: flex;
 	flex-direction: row;

@@ -10,7 +10,11 @@
 
 #A61F12 - red
 */
-
+@media only screen and (max-width: 810px) {
+    body {
+        font-size: 10px;
+    }
+}
 .blogPostContainer p {
 	line-height: 1.5;
 	font-size: 1.2em;
@@ -44,7 +48,7 @@
 	color: #fff;
 	font-size: 1.3em;
 	padding: 20px;
-	width: 60em;
+	margin: 0 5%;
 }
 
 pre {

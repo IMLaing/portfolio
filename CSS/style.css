@@ -199,3 +199,7 @@ img.cardThumbnail{
 	margin-top: 10px;
 	line-height: 10px;
 }
+
+.quotes {
+	display: none;
+}

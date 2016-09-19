@@ -41,6 +41,10 @@ footer {
 	display: flex;
 	flex-direction: column;
 }
+.widthContainer {
+	width: 90%;
+	margin: 0 auto;
+}
 /*---Nav--------------------------Nav---*/
 #navbar > ul > li {
 	text-align: center;

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>IMLaing - Flexbox Basics</title>
+	<link rel="icon" type="image/png" href="">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../JS/script.js"></script>
+	<script type="text/javascript" src="../JS/flexblog.js"></script>
+	<link rel='stylesheet' type='text/css' href='../CSS/style.css'>
+	<link rel='stylesheet' type='text/css' href='../CSS/flexblog.css'>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html">IMLaing</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../learning.html">Learning with IML</a></li>
+					<li><a href="#">Exercises to keep busy</a></li>
+					<li><a href="../portfolio.html">Portfolio for IML</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>  
+<section class="contentFull">
+
+	<div class="headerContainer">
+		<h1>IMLaing</h1>
+		<p class="headerP">Salesman gone web developer working to share the learning experience of 
+		<span class="quotes">JAVASCRIPT</span>
+		<span class="quotes">CSS</span>
+		<span class="quotes">REACT</span>
+		<span class="quotes">ANGULAR JS</span>
+		<span class="quotes">NODE.JS</span>
+		</p>
+	</div>
+	<div class="blogPostContainer flexBoxCenter">	
+		<div class='getStart'>
+		  <div class="getStartItem">
+		    <h1>What is Flexbox</h1>
+		    <p>The Flexbox Layout (Flexible Box) module is meant to help us lay out elements and modules within websites and applications</p>
+		    <p>Chris Coyier: "The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space... A flex container expands items to fill available free space, or shrinks them
+		      to prevent overflow."</p>
+		    <p>Flexbox is helpful for building device-agnostic, responsive web sites and applications.
+		    </p>
+
+		    <h1>Getting Started</h1>
+		    <p>Flexbox has containers and children.</p>
+		    <pre>.flexboxContainer {
+		    display:flex;
+		    flex-direction: row;
+		    flex-wrap: wrap;
+		    justify-content: flex-start;
+		    align-content: flex-start;
+		    align-items: center;
+		}
+				
+		 
+		.FlexboxItem {
+		    width: 300px;
+		    height: 250px;
+		    flex-grow: 0;
+		    flex-shrink: 0;
+		    flex-basis: 0;
+		}</pre>
+		    <p> Above would be an example of how to setup a flexbox container with a single element inside. The children of a <span class="inline">display:flex</span> container will typically be called items to make organization easier. Here is an example of a flexbox
+		      contianer:
+		    </p>
+
+		    <div class="windowFlexContainer flexRow flexJusAround flexAlignItemCen">
+		      <p class="label">Flexbox Container </p>
+		      <div class="fixedFlex c1">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex c2">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex c3">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		    </div>
+		    <div class="buttons">
+		      <button id="toggleFlexDirection">Flex Direction: Row or Column</button>
+		      <button id="toggleFlexJusContent">toggle space-around/between</button>
+		    </div>
+		    <h1>Choosing Item Direction and Alignment</h1>
+		    <p>The above is a flexbox container. The items inside will remain equidistance and of equal size no matter the screen size.<span class="inline">flex-direction</span> will change which direction your items are aligned. <span class="inline">justify-content</span>      will use the free space remaining on the screen either around or between the items. Around adds space on both sides equally, while between pushes the elements away from one another to the max container distance.
+		    </p>
+		    <p><span class="inline">justify-content</span> can also be used to align the items on either the horizontal axis while using row or vertical axis when using column. <span class="inline">justify-content</span> can also have the items begin at <span class="inline">flex-start</span>      or <span class="inline">flex-end</span> to begin the items at the beginning or end of the parent container.</p>
+		    <p><span class="inline">align-items</span> is used to align the items along the alternate axis compared to <span class="inline">justify-content</span>. This is very powerful and can be used to vertically and horizontally align elements right in the center
+		      of a container:</p>
+		    <div class="windowFlexContainerAlign flexRow flexJusAround flexAlignItemStart">
+		      <p class="label">Flexbox Container </p>
+		      <div class="fixedFlex c1">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		    </div>
+		    <div class="buttons">
+		      <button id="toggleFlexAlignStart">flex-align: flex-start</button>
+		      <button id="toggleFlexAlignCenter">flex-align: center</button>
+		      <button id="toggleFlexAlignEnd">flex-align: flex-end</button>
+		      <!--  <button id="toggleFlexJusStretch">flex-align: stretch</button>-->
+		    </div>
+		    <p><span class="inline">align-content</span> is used to align the flex container's items when there is extra space between the rows or columns of the entire container. This will only work if there are multiple rows: </p>
+		    <div class="windowFlexContainerRows">
+		      <p class="label">Flexbox Container </p>
+		      <div class="fixedFlex2 c1">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex2 c2">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex2 c3">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex2 c1">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex2 c2">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex2 c3">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		    </div>
+		    <div class="buttons">
+		      <button id="flexAlignItemsStrEnd">align-content: flex-start/flex-end</button>
+		      <button id="flexAlignItemsArnBet">align-content: space-around/between</button>
+		      <button id="flexAlignItemsCen">align-content: center</button>
+		      <!--  <button id="toggleFlexJusStretch">flex-align: stretch</button>-->
+		    </div>
+		    <h1>Making Items Flexible</h1>
+		    <p> Now that we can make the container place the items in the direction we want and align them to the container as we need them we can choose how they will flex within the container. This is done by modifying the elements flex properties. <span class="inline">flex-grow</span>      is used to define the item size relative to the other flex items that share it's container. <span class="inline">flex-shirnk</span> will determine how much faster the item shrinks when the container gets smaller. The higher the shrink the more of
+		      the container space will go to the other items. <span class="inline">flex-basis</span> will be used to set a minimum width of the item. The item will take up all the space it can in the container and get as small as the flex-basis before it will
+		      no longer shrink or be moved to the next row depending on the <span class="inline">flex-wrap:</span> property.</p>
+		    <div class="windowFlexContainerItemflex">
+		      <p class="label">Flexbox Container </p>
+		      <div class="fixedFlex3 c1">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex3 c2">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex3 c3">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex3 c2">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex3 c3">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		      <div class="fixedFlex3 c1">
+		        <p class="label">Flexbox item</p>
+		      </div>
+		    </div>
+		    <p>The container above is duplicated from the previous example. The <span class="inline">align-items</span> property is set to stretch however and height is removed from the item. Each item has the following CSS:</p>
+		    <pre>.flexBoxItem {
+		    flex-grow: 1;
+		    flex-shrink: 0;
+		    flex-basis:200px;
+		    }</pre>
+		    <p>This means that the items will grow at the same pace as one another to fill the available space. Each row/column will fill with the flex-items until the items reach their <span class="inline">flex-basis: 200px</span>Again, the <span class="inline">align-items: stretch;</span>      property allows these items to take up as much space that is available.</p>
+		    <h1>Practical Example</h1>
+		    <p>Here is a simple design for a 3 column page:</p>
+		    <div class="windowFlexContainerItemLayout">
+		      <p class="label">Flexbox Container </p>
+		      <div class="fullLength c1">
+		        <p class="label">Header</p>
+		        <p>Should be menu items</p>
+		      </div>
+		      <div class="fixedFlex4 c2">
+		        <p class="label">Content</p>
+		        <p>Content section 1</p>
+		      </div>
+		      <div class="fixedFlex4 c3">
+		        <p class="label">Content</p>
+		        <p>Content section 2</p>
+
+		        <p>Content section 2</p>
+
+		        <p>Content section 2</p>
+
+		        <p>Content section 2</p>
+
+		        <p>Content section 2</p>
+
+		      </div>
+		      <div class="fixedFlex4 c2">
+		        <p class="label">Content</p>
+		        <p>Content section 3</p>
+		      </div>
+		      <div class="fullLength c1">
+		        <p class="label">footer</p>
+		        <p> should be footer items</p>
+		      </div>
+		    </div>
+		    <p> This will now scale to the content contained within the flexitems. Once a content item hits 250px it is pushed to the next row. Here is another example for possible sections.</p>
+		     <div class="flexWindowProject">
+      <div class="c3 box0">
+      Menu/Branding
+      </div>
+      <div class="c1 box1">
+      Content 
+      </div>
+      <div class="c2 box2">
+      Image
+      </div>
+      <div class="c3 box3">
+      Image
+      </div>
+      <div class="c1 box4">
+      Content
+      </div>
+      <div class="c2 box5">
+      Content
+      </div>
+      <div class="c3 box6">
+      Content
+      </div>
+      <div class="c1 box7">
+      Footer
+      </div>
+    </div>
+		</div>
+ 
+
+	<div class="resourceLinks">
+			<h2>Resource Links:</h2>
+			<ul>
+				<li>
+					<a href="http://flexboxin5.com/">http://flexboxin5.com/</a>
+				</li>
+				<li>
+					<a href="http://www.w3schools.com/css/css3_flexbox.asp">http://www.w3schools.com/css/css3_flexbox.asp</a>
+				</li>
+			</ul>
+		</div>	
+
+		</div> <!-- blogContent -->
+	<footer>
+		<div class="footerContainer">
+			<div class="footerItem">
+				<p>&copy IMLaing 2016</p>
+				<p> Email: <a href="mailto:ianmlaing@gmail.com">ianmlaing@gmail.com</a></p>
+				<p>Phone: 978-500-2392</p>
+			</div>
+			<div class="footerItem">
+				<a href="https://www.linkedin.com/in/ian-laing-5055b347?trk=nav_responsive_tab_profile_pic"><i class="fa fa-linkedin"></i></a>
+				<a href="https://github.com/IMLaing?tab=repositories"><i class="fa fa-github"></i></a>
+				<a href="http://codepen.io/IML/"><i class="fa fa-codepen"></i></a>
+				<a href="https://twitter.com/IMLaing"><i class="fa fa-twitter"></i></a>
+			</div>
+		</div>
+	</footer>
+</section>
+
+</body>
+</html>
+
+
+
+
+

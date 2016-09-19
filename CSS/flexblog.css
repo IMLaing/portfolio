@@ -1,0 +1,240 @@
+
+.flexBoxCenter {
+  width: 90%;
+  margin: 0 auto;
+}
+span.inline {
+  text-transform: lowercase;
+  background:darkgrey;
+  border-radius: 5px;
+  padding: 3px;
+  display:inline;
+}
+.getStart {
+  
+  border-radius: 10px;
+  font-size: 1.2em;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255,240,255, 1);
+
+}
+pre {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid;
+  padding: 10px;
+}
+p{
+  max-width: 60em;
+}
+
+/*ALIGN ITEMS*/
+.flexAlignItemCen{
+  align-items: center;
+}
+.flexAlignItemStr{
+  align-items: strech;
+}
+.flexAlignItemStart{
+  align-items: flex-start;
+}
+.flexAlignItemEnd{
+  align-items: flex-End;
+}
+/*JUSTIFY CONTENT*/
+.flexJusAround {
+    justify-content: space-around;
+}
+.flexJustBetween {
+  justify-content: space-between;
+}
+
+/*FLEX DIRECTION*/
+.flexRow {
+   flex-direction: row;
+}
+.flexColumn {
+   flex-direction: column;
+}
+/*ALIGN CONTENT*/
+.flexAlignConCen {
+  align-content: center;
+}
+.flexAlignConStart{
+  align-content: flex-start; 
+}
+.flexAlignConEnd{
+   align-content: flex-end; 
+}
+.flexAlignConAround{
+   align-content: space-around; 
+}
+.flexAlignConBetween{
+   align-content: space-between; 
+}
+
+/*FlexWindows*/
+.windowFlexContainer,
+.windowFlexContainerAlign,
+.windowFlexContainerRows,
+.windowFlexContainerItemflex{
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 55px black, 0 0 5px black;
+  border: 1px solid;
+  display:flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.windowFlexContainerRows{
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.windowFlexContainerItemflex {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.windowFlexContainerItemLayout {
+  border-radius: 10px;
+  box-shadow: inset 0 0 55px black, 0 0 5px black;
+  border: 1px solid;
+  display:flex;
+  position: relative;
+   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.fixedFlex {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+.fixedFlex2 {
+  position: relative;
+  height: 100px;
+  flex: 1 0 200px;
+}
+.fixedFlex3 {
+  position: relative;
+  flex: 1 0 200px;
+}
+.fixedFlex4 {
+  position: relative;
+  flex: 1 0 250px;
+}
+.fullLength {
+  position: relative;
+  flex: 1 1 98%;  
+}
+.c1{
+  background: #73264d;
+  color:#03031B;
+}
+.c2{
+  background:#03031B;
+  color:#73264d;
+}
+.c3{
+  background:#A11224;
+  color:#03031B;
+}
+
+.windowFlexContainerItemLayout p:nth-child(2){
+  margin: 20px;
+}
+p.label {
+  border: 1px solid;
+  margin: 0;
+  padding: 2px;
+  display: inline;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-transform: uppercase;
+}
+.buttons{
+  text-align: center;
+}
+button {
+  background: #73264d;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  box-shadow: 5px 5px  5px #03031B;
+  text-transform: uppercase;
+  transition: .6s ease;
+}
+button:hover{
+  cursor: pointer;
+  background: #03031B;
+  border: 1px solid;
+  color: white;
+}
+
+.resourceLinks ul{
+  list-style: none;
+}
+.resourceLinks li{
+  border: 1px solid #fff;
+  text-align: justify;
+  padding: 10px
+}
+.resourceLinks a {
+  padding: 10px;
+}
+a:hover{
+  color: #075450;
+}
+
+
+
+/*for project*/
+.flexWindowProject {
+  text-align: center;
+  font-size:2em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.box0 {
+  height: 100px;
+  flex: 2 0 100%;
+}
+.box1 {
+  height: 250px;
+  flex: 2 0 60%;
+}
+.box2{
+  height: 250px;
+  flex: 1 0 30%;
+}
+.box3{
+  height: 250px;
+   flex: 1 0 30%;
+}
+.box4{
+  height: 250px;
+  flex: 2 0 60%;
+}
+.box5{
+  height: 250px;
+  flex: 2 0 50%;
+}
+.box6{
+   height: 250px;
+   flex: 1 0 40%;
+}
+.box7 {
+  height: 100px;
+  flex: 2 0 100%;
+}

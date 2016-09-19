@@ -12,24 +12,15 @@
 */
 @media only screen and (max-width: 810px) {
     body {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
-.blogPostContainer p {
-	line-height: 1.5;
-	font-size: 1.2em;
-	margin: 1.2em 0;
+.linearGradientCenter {
+	width: 90%;
+	margin: 0 auto;
 }
-.blogPostContainer {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	margin-bottom: 25px;
-}
+
 .blogIntro {
-	background: rgba(0,0,0,.5);
 	color: #fff;
 	padding: 10px;
 	margin: 10px;
@@ -46,16 +37,22 @@
 .blogContent {
 	background: rgba(0,0,0,.5);
 	color: #fff;
-	font-size: 1.3em;
-	padding: 20px;
-	margin: 0 5%;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
 }
 
 pre {
-	width: 60%;
+	
 	margin: 10px auto;
 	line-height: 1;
 	font-weight: bolder;
+	/*This is used to make sure the text will wrap on smaller devices*/
+	white-space: pre-wrap;       /* css-3 */
+ 	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ 	white-space: -pre-wrap;      /* Opera 4-6 */
+ 	white-space: -o-pre-wrap;    /* Opera 7 */
+ 	word-wrap: break-word;       /* Internet Explorer 5.5+ */
 	
 }
 
@@ -96,17 +93,10 @@ pre {
 	background: black;
 }
 
-.resourceLinks ul{
-	list-style: none;
+.resourceLinks{
+	border: 2px solid;
 }
-.resourceLinks li{
-	border: 1px solid #fff;
-	text-align: justify;
-	padding: 10px
-}
-.resourceLinks a {
-	padding: 10px;
-}
-a:hover{
-	color: #075450;
+
+.resourceLinks a{
+	padding: 5px;
 }

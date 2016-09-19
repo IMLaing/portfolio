@@ -119,22 +119,19 @@ div.headerContainer h1{
 
 
 /*---Project Cards--------------------------Project Cards---*/
+@media only screen and (max-device-width: 500px) {
+	.projectCard {
+	border-radius: 5px;
+	box-shadow: 4px 4px 4px #000;
+	flex: 1 0 200px;
+	}
+
+	}
 .projectCard {
 	border-radius: 5px;
-	border: 1px #999999 solid;
 	box-shadow: 2px 2px 2px #000;
-	margin:1.375em auto;
-	padding: 15px;
-	max-width: 460px;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	align-items: center;
-}
-.cardTitle, .cardThumbnail, .cardDescription{
-	flex-grow: 1;
-	flex-shrink: 0;
-}
+	flex: 1 0 400px;
+	}
 h1.cardTitle {
 	text-align: center;
 	padding: 10px;
@@ -144,6 +141,8 @@ img.cardThumbnail{
 	max-width: 360px;
 	max-height: 220px;
 	box-shadow: 4px 4px 4px #333333;
+	display: block;
+	margin: 0 auto;
 }
 
 .projectCard p {
@@ -169,6 +168,33 @@ img.cardThumbnail{
 }
 .sTMH {
 	background: rgba(153, 187, 255, .6);
+}
+
+/*---Learning --------------------------Learning---*/
+
+.learningBlockContainer {
+	background: rgba(0,0,0,.5);
+	justify-content: space-around;
+	align-items: center;
+}
+.learningBlock {
+	border-bottom: 2px #fff solid;
+	margin: 25px;
+	padding: 25px;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.learningBlock h1{
+	flex: 1 0 250px;
+	padding: 15px;
+}
+.learningBlock p{
+	flex: 1 0 300px;
+	max-width: 300px;
+	padding: 15px;
 }
 
 /*---Social Footer--------------------------Social Footer---*/
@@ -204,4 +230,11 @@ img.cardThumbnail{
 
 .quotes {
 	display: none;
+}
+
+
+.portfolioCards {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }

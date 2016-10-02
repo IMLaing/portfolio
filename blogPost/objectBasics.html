@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>IMLaing - Flexbox Basics</title>
+	<link rel="icon" type="image/png" href="">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../JS/script.js"></script>
+	<script type="text/javascript" src="../JS/flexblog.js"></script>
+	<link rel='stylesheet' type='text/css' href='../CSS/style.css'>
+	<link rel='stylesheet' type='text/css' href='../CSS/objectBasics.css'>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html">IMLaing</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="../learning.html">Learning with IML</a></li>
+					<li><a href="#">Exercises to keep busy</a></li>
+					<li><a href="../portfolio.html">Portfolio for IML</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>  
+<section class="contentFull objBasicBackground">
+<div class="content"><h1>What is an Object in Javascript</h1>
+<p> Lets start with what is not an object in javascript: strings ("Tennis Ball"), numbers (42), true, false, null, and undefined. Everything else will be an object.</p>
+<p>An object is a variable which can contain other variables. Think of an object like a container that can store any other type of data or even another container full of data. The contained variables are called named values which are simply written name : value</p>
+<pre>var myObj = {
+  name: value,
+  name2: value2,
+  innerObj: { name3: value3,
+              name4: value4
+            }
+}
+</pre>
+<p>Objects can store any number of name : value pairs which is very useful for holding a group of data that is all related in some way. for example if you had a contact list this might be one of the contacts</p>
+<pre>
+var Contact = {
+  firstName: "Timber",
+  lastName: "Underfoot",
+  phone: 9783450098,
+  email: "TimberTheWolf@barkmail.com"
+}
+</pre>
+<p> An object's named values are called properties of that object. Consider that the Contact object above has the information regarding a Timber Underfoot - the properties of the object are firstName, lastName, phone, and email. Each of those properties are assigned a value, hence name : value.</p>
+
+<h1>How to create an Object</h1>
+<p>There are many ways to create an object. Depending on how you plan to use the object will dictate which option you use.</p>
+<h3>Object Literal</h3>
+<p>Object Literal is the most straight forward way to create an object</p>
+<pre>
+var Contact = {
+  firstName: "Timber",
+  lastName: "Underfoot",
+  phone: 9783450098,
+  email: "TimberTheWolf@barkmail.com"
+}</pre>
+<p>The Contact object is a variable which uses curly brackets {} and then name:value pairs seperated by commas. The object could be placed all on one line, however, readability is important so common practice is to have each name:value pair on a new line.</p>
+<h3>Keywork New</h3>
+<p> This method is rarely used and hurts readability in this developer's opinion. If you were interested in usinging the keywork new here is how an object is setup.</p>
+<pre>
+var Contact = new Object();
+  Contact.firstName = "Timber";
+  Contact.lastName = "Underfoot";
+  Contact.phone = 9783450098;
+  Contact.email = "TimberTheWolf@barkmail.com";
+</pre>
+<p> Although this way is not typical it does show a great example of what is going on with an object. In the above example we named our variable Contact and then assigned it to new Object(); At this point the object is empty. By accessing the object and adding a property value with an assignment you will start to build the object. </p>
+<pre>
+var Contact = new Object();
+  console.log(Contact);
+    // Would return an empty object
+    // {}
+    
+  Contact.firstName = "Timber";
+  Contact.lastName = "Underfoot";
+  console.log(Contact)
+    //Now it would return the object with both of the above properties added
+    // {firstName: "Timber", lastName: "Underfoot"}
+  Contact.phone = 9783450098;
+  Contact.email = "TimberTheWolf@barkmail.com";
+</pre>
+<p> If you are sure you are only going to be creating one object and you have all the information you need the object literal method will be the best option for you. What if you do not know how many properties the object will have? What if you need a whole bunch of contacts not just one? You will need to use an object constructor. </p>
+<h3>Object Constructor </h3>
+<pre>
+function Contact(first, last, phone, email){
+   this.firstName = first;
+   this.lastName = last;
+   this.phone = phone;
+   this.email = email;
+}
+var timber = new Contact("Timber", "Underfoot", 9783450098,"TimberTheWolf@barkmail.com");
+var charlie = new Contact("Charlie", "Deephole", 9781789142,"CharlieChompers@barkmail.com");
+</pre>
+<p> The above creates an object "Contact". This Contact object is now the prototype.OWe then define the properties we would like with this.propertyName. In this instance the "this" keyword is referring to the function Contact(); which will translate to the new objects when they are created. Assigning a variable to the function using the new keyword here will create the same object with the arguments as properties. This can be done as many times as needed which makes this method perfect for a dynamic contact list so you can add new contacts easily with just one line of code instead of making multiple object literals.</p>
+<h3>!Important Note</h3>
+<p> The objects you create are mutable. This means that if you assign an object to a variable such as:
+<span class="inlineCode">var timberContact = Contact;</span> the variable timberContact now controls the entirey of the Contact object. If you were to then add <span class="inlineCode">timberContact.firstName = "Lassie";</span> Lassie would be assigned to all objects that were created using that constructor.</p>
+<h1>Accessing the Object</h1>
+<p> With everything stored in one place for your contacts it will be easy to get the information. To access the value of the properties directly you will need to know the property name. </p>
+<pre>
+objectName.property
+  // e.g. timber.lastName
+objectName["property"]
+  // e.g. timber["lastName"]
+</pre>
+<p> This method works well when you know the name of the property that you need to access. If you wanted to print out all information of the contact without having to add 4 different lines of code you could use a for...in loop to preform an action on each property in an object. The way a for...in loops work is that for each iteration, one property from the object is assigned to a variable and then a block of code is excuted.
+</p>
+<pre>
+for (prop in object){
+  //code block
+}
+</pre>
+<p>To confirm - prop above can be labelled anything you like. During the loop the first property in object will be assigned to prop which can then be used in the code block followed by the second property of object and so on. This would be helpful if you needed to print out all information from an object for example</p>
+<pre>
+var info;
+for( prop in timber){
+  info += timber[prop] + ' ';
+}
+console.log(info);
+// "Timber Underfoot 9783450098 TimberTheWolf@barkmail.com "
+</pre>
+
+<p> Now as you can see this is a very interesting loop since you can add any type of function within that code block to be executed on each element. Now that we can go through all the properties we should know how to add or remove these properties. For our Contact object lets say we would like to add an address property</p>
+<pre>
+//it is assumed our Contact object is already created and we have made timber a Contact object
+timber.address = "42 Galaxy Road, Earth";
+
+//timber would become: 
+timber = {
+  firstName: "Timber",
+  lastName: "Underfoot",
+  phone: 9783450098,
+  email: "TimberTheWolf@barkmail.com",
+  address: "42 Galaxy Road, Earth"
+}
+//Contact would not be changed
+
+</pre>
+<p> There is now a property address within the timber object. Something interesting to note is that if you were be using the object constructor you would be able to add address to ALL objects that are created by that constructor. This is because you are changing the prototype of the object. For the example with Timber and Charlie above, If you only added timber.address = "42 Galaxy Road, Earth"; then Charlie's contact would not have been updated at all and new contact objects would not have the additional property included. That means the timber object will have 5 properties while the Contact and Charlie objects only have 4. However, if you want address to be available for all current and future contact list items from this example you could add the following:</p>
+ <pre>
+ Contact.address = "";
+ </pre>
+  <p>This would add the address property to all objects that were construted using the Contact object. If you added a property that you no longer need it is very simple to remove it from an object</p>
+<pre>
+delete Contact.address;
+</pre>
+<p>That is it... Almost. If you try to delete a property on an object created from the prototype object you will find that you cannot delete inherited properties and it must be removed at the highest level.</p>
+<h1>Creating Object Methods</h1>
+<p>The pattern is fairly clear when it comes to creating named values and adding a method to an object follows that same pattern: name : function</p> 
+<pre>
+//it is assumed our Contact object is already created
+Contact.fullName = function() {
+  return this.firstName + " " + this.lastName;
+  }
+</pre>
+<p>Now you can call Contact.fullName(); and run that method. Remember - since this will be inherited to all Contact objects you could also do timber.Fullname() to run the method on that specific object.</p>
+  
+<h1>Using Prototype Objects</h1>
+<p>Now that you can create, read, update, and delete data within an object and create brand new objects we will go over the best and fastest way to make your objects.</p>
+<h2>Object.prototype</h2>
+  As mentioned above the Contact object is a constructor function and is the prototype of any contact objects created from it. Both timber and charlie's objects were created from the Contact.prototype. Because of this anything added to the Contact object will be available to the other objects through inheritence. Another neat piece to prototype objects is that they are a reference for all of the information needed for new objects. This means that the new objects do not contain the methods in the prototype, when a method is called on a particular object the prototype is refereced. This is beneficail because it saves space and time when processing your javascript. Lets take a look at that here is the constructor object which will be our prototype:
+<pre>
+function Contact(first, last, phone, email){
+   this.firstName = first;
+   this.lastName = last;
+   this.phone = phone;
+   this.email = email;
+   this.fullName = function() {
+  return this.firstName + " " + this.lastName;
+  }
+}
+</pre> 
+  <p> No we will create a reference to that object:</p>
+  <pre>  
+var timber = new Contact("Timber","Underfoot",9783450098,"TimberTheWolf@barkmail.com");
+  </pre>
+  <p>The variable timber now references the Contact.prototype object. When you call timber.fullName() you are actually accessing Contact.prototype.fullName(); via the reference that was made using the variable timber. 
+    
+    What is happening here is that the "this" keyword in the prototype will be replace by timber and bound to the variable timber.Therefore, the variable timber is a reference to the prototype object and has access to all of the object prototype methods. This is handy so you Don't Repeat Yourself(DRY) writing the fullName() method in each iteration of the Contact objects.</p>
+</div>
+
+<div><h1>Let's build that contact app in an excercise!</h1></div>
+</section>
+
+</body>
+</html>
+
+
+
+
+
